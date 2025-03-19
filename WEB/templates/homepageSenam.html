@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="with=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="../static/img/Senam-Ku_icon.png">
+    <title>Welcome To Senam-Ku Homepage!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(255,251,171,0.7), rgba(134,190,11,0.7)), url(../static/img/bannerSenam.jpg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            width: 150px;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: #473502;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #0045AA;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+
+        .text-box {
+            width: 90%;
+            color: #473502;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: right;
+        }
+
+        .text-box h1 {
+            margin-top: 50px;
+            font-size: 40px;
+        }
+
+        .text-box p {
+            margin: 10px auto 30px;
+            font-size: 16px;
+            color: black;
+            width: 50%;
+            text-align: justify;
+            padding-left: 50%;
+        }
+
+        .text-box span {
+            color: #FFF770;
+        }
+
+        .hero-btn {
+            position: absolute;
+            right: 250px;
+            text-decoration: none;
+            color: #473502;
+            font-weight: bold;
+            border: 4px solid #473502;
+            padding: 12px 34px;
+            font-size: 20px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .hero-btn:hover {
+            border: 4px solid #FFF770;
+            color: #FFF770;
+            background: #473502;
+            padding: 12px 38px;
+            transition: 1s;
+        }
+
+        .main-video {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-right: 100px;
+            padding-top: 100px;
+            margin-left: 100px;
+        }
+
+        .main-video .video {
+            width: 42%;
+        }
+
+        .main-video video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+
+        .row {
+            margin-top: 2%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .senamku {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+            padding-left: 50px;
+            width: 50%;
+        }
+
+        .sk-col {
+            flex-basis: 31%;
+            background-image: linear-gradient(to right top, #fffbab, #e5eb87, #c9db64, #a9cd3f, #86be0b);
+            border-radius: 10px;
+            margin-bottom: 5%;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+
+        .sk-col p {
+            color: black;
+        }
+
+        .sk-col:hover {
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.9);
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .technique {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .tech-row {
+            margin-top: 2%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tech-col {
+            flex-basis: 32%;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+
+        }
+
+        .tech-col img {
+            width: 100%;
+            display: block;
+            background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+            background-size: cover;
+            background-blend-mode: overlay;
+        }
+
+        .layer {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+        }
+
+        .layer:hover {
+            background: linear-gradient(to top, rgba(168,183,4,0.8), rgba(255, 255,0,0.8));
+        }
+
+        .layer h3 {
+            width: 100%;
+            font-weight: 500;
+            color: black;
+            font-size: 26px;
+            bottom: 0;
+            opacity: 0;
+            position: absolute;
+            margin-bottom: 40px;
+            transition: 0.5s;
+        }
+
+        .layer:hover h3{
+            bottom: 49%;
+            opacity: 1;
+        }
+
+        .layer p {
+            width: 100%;
+            font-weight: 500;
+            color: black;
+            font-size: 12px;
+            bottom: 0;
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .layer:hover p {
+            bottom: 25%;
+            right: -2%;
+            opacity: 1;
+        }
+
+        .benefit {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .ben-col {
+            flex-basis: 31%;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            text-align: left;
+        }
+
+        .ben-col img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .ben-col p {
+            padding: 0;
+            text-align: justify;
+        }
+
+        .ben-col h3 {
+            margin-top: 16px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .review {
+            width: 80%;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 25px;
+            text-align: center;
+        }
+
+        .review p {
+            padding-bottom: 25px;
+        }
+
+        .user-col {
+            flex-basis: 44%;
+            border-radius: 10px;
+            margin-bottom: 3%;
+            text-align: left;
+            background: #FFE177;
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+        }
+
+        .user-col img {
+            height: 40px;
+            margin-left: 5px;
+            margin-right: 30px;
+            border-radius: 50%;
+        }
+
+        .user-col p {
+            padding: 0;
+            text-align: justify;
+        }
+
+        .user-col h3 {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .contact {
+            margin: 25px auto;
+            width: 80%;
+            background-image: linear-gradient(rgba(255, 245, 78, 0.7), rgba(255, 177, 21, 0.7)), url(img/banner2.png);
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .contact h1{
+            color: black;
+            margin-bottom: 40px;
+            padding: 0;
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            background: #F9DDA6;
+        }
+
+        .footer h4 {
+            margin-bottom: 20px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="/home"><img src="../static/img/Senam-Ku_logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="/aboutus">ABOUT US</a></li>
+                    <li><a href="/tutorial">TUTORIAL</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="text-box">
+            <h1>Welcome to<br>Senam-<span>Ku</span> Website!</h1>
+            <p>Explore the world of fitness like never before with our cutting-edge AI technology. Senam-Ku revolutionizes the way you learn and perform workout routine, offering precision, speed, and an immersive experience. By integrating advanced posture landmark detection, Senam-Ku ensures accurate technique analysis and personalized feedback in real-time. Whether you're a beginner or an experienced individual, our web-based platform provides structured training modules tailored to your skill level. This platform will help you in performing basic exercise while making sure that you can avoid any injuries. Join a global community of fitness enthusiasts, connect with people worldwide while embracing the future of fitness education. Experience the transformation of fitness training with Senam-Ku, where healthier lifestyle meets innovation.
+            </p>
+            <a href="/model" class="hero-btn">Test Now!</a>
+        </div>
+
+        <div class="main-video">
+            <div class="video">
+                <video autoplay loop muted>
+                    <source src="../static/img/pushup.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!--Course-->
+
+    <section class="senamku">
+        <h1>Why Choose Senam-Ku?</h1>
+        <p>Senam-Ku is a state-of-the-art web-based system designed to revolutionize personal fitness training. Utilizing advanced artificial intelligence algorithms, Senam-Ku accurately monitors and analyzes your exercise movements in real-time through your own cam. It provides immediate feedback on your posture, ensuring you perform each exercise correctly and safely. Whether you're a fitness enthusiast looking to perfect your form or a beginner eager to start your fitness journey, Senam-Ku offers a comprehensive platform for improving, learning, and mastering various exercises. Join us on this exciting journey as we pave the way for a new era in fitness training and personal wellness.</p>
+
+        <div class="row">
+            <div class="sk-col">
+                <h3>Enhances exercise effectiveness and safety.</h3>
+                <p>Senam-Ku provides real-time feedback on your posture, ensuring you perform exercises correctly to maximize benefits and minimize the risk of injury.
+                </p>
+            </div>
+
+            <div class="sk-col">
+                <h3>Accessible and convenient for users of all levels.</h3>
+                <p>Whether you're a fitness enthusiast or a beginner, Senam-Ku's user-friendly interface makes it easy to follow and improve your exercise routines from the comfort of your home.
+                </p>
+            </div>
+
+            <div class="sk-col">
+                <h3>Supports fundamentals and essential exercises.</h3>
+                <p>Senam-Ku is designed to guide you through four common exercises, ensuring you perform these foundational exercises with proper form and technique.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="technique">
+        <h1>Technique Chosen</h1>
+        <p>We chose the most common and essential exercises to ensure accessibility and ease of learning for all users, from beginners to professionals. Our selection process was meticulous, focusing on exercises that provide a solid foundation and enhance fitness progressively. Each exercise is demonstrated with clear, step-by-step instructions to facilitate effective practice and mastery. Whether you're just starting out or refining advanced skills, these exercises offer valuable insights and practical benefits.<br><br>The following exercises chosen are:</p>
+
+        <div class="tech-row">
+            <div class="tech-col">
+                <img src="../static/img/squat1.png">
+                <div class="layer">
+                    <h3>Squat</h3>
+                    <p>Combines a bending and straightening <br>motion to strengthen the lower body, <br>particularly targeting the quadriceps, <br>hamstrings, and glutes for maximum<br> stability and power!</p>
+                </div>
+            </div>
+
+            <div class="tech-col">
+                <img src="../static/img/bicep2.png">
+                <div class="layer">
+                    <h3>Bicep Curl</h3>
+                    <p>Involves curling a weight upwards to<br> engage and build the bicep muscles, <br>typically targeting the upper arm for <br>increased strength and definition!</p>
+                </div>
+            </div>
+
+            <div class="tech-col">
+                <img src="../static/img/situp3.png">
+                <div class="layer">
+                    <h3>Sit-Up</h3>
+                    <p>Incorporates a curling motion to <br>engage the abdominal muscles, <br>typically targeting the core to enhance <br>strength and improve overall stability!</p>
+                </div>
+            </div>
+
+            <div class="tech-col">
+                <img src="../static/img/pushup4.png">
+                <div class="layer">
+                    <h3>Push-Up</h3>
+                    <p>Combines an upward and downward <br>pressing motion to work the chest, <br>shoulders, and triceps, providing a <br>comprehensive upper body workout for <br>strength and endurance!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefit">
+        <h1>Benefits Of Senam-Ku</h1>
+        <p>Senam-Ku offers a groundbreaking approach to personal fitness training, delivering tailored feedback and real-time analysis to enrich your workout journey.</p>
+
+        <div class="row">
+            <div class="ben-col">
+                <img src="../static/img/ben1.jpg">
+                <h3>Physical Fitness</h3>
+                <p>Senam-Ku provides a holistic fitness regimen that targets all major muscle groups, fostering strength, flexibility, and cardiovascular endurance. By integrating dynamic exercises and structured training sessions, Senam-Ku enables users to achieve their fitness objectives efficiently. This comprehensive approach not only enhances physical well-being but also promotes overall health and vitality.</p>
+            </div>
+
+            <div class="ben-col">
+                <img src="../static/img/ben2.jpg">
+                <h3>Discipline</h3>
+                <p>One of the core principles of Senam-Ku is discipline, transcending mere physical exercise to encompass mental fortitude and self-mastery. Through consistent adherence to structured workouts and dedicated practice, individuals cultivate a disciplined mindset that permeates all facets of their lives. This discipline nurtures resilience, fortitude, and the capacity to surmount obstacles, empowering individuals to excel not only in their fitness pursuits but also in their personal and professional endeavors.</p>
+            </div>
+
+            <div class="ben-col">
+                <img src="../static/img/ben3.png">
+                <h3>Reduction of Healthcare Worker Burden</h3>
+                <p>Senam-Ku plays a pivotal role in lessening the burden on healthcare workers by mitigating the risk of exercise-related injuries. By providing real-time feedback on posture and technique, Senam-Ku helps users perform exercises correctly, minimizing the likelihood of strains, sprains, and other workout-related injuries. This proactive approach not only promotes personal wellness but also contributes to alleviating the strain on healthcare resources, allowing healthcare workers to focus on other critical areas of patient care.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="review">
+        <h1>Reviews From Various Users!</h1>
+        <p>Users of Senam-Ku have praised its intuitive interface and innovative methodology, commending its capacity to offer tailored feedback and instantaneous analysis of workout techniques. Many have expressed satisfaction with Senam-Ku's seamless fusion of cutting-edge technology with fitness training, emphasizing its efficacy in augmenting learning and skill refinement.</p>
+
+        <div class="user-col">
+            <img src="../static/img/user1.png">
+            <div>
+                <p>As an instructor at UiTM, I must commend Senam-Ku for its transformative impact on fitness education. Its seamless amalgamation of modern technology with exercise principles not only enriches learning but also captivates students. Senam-Ku has emerged as an indispensable resource in my teaching toolkit, providing students with personalized guidance and nurturing a profound comprehension of fitness fundamentals.</p>
+                <h3>Dr. Pradeep Isawasan - Lecturer Of UiTM</h3>
+            </div>
+        </div>
+        <div class="user-col">
+            <img src="../static/img/user2.png">
+            <div>
+                <p>"Senam-Ku has revolutionized my fitness journey, infusing it with purpose and fulfillment. As a consistent user, I value its intuitive interface and the flexibility it provides for exercising anytime, anywhere. Whether I'm a novice or an adept enthusiast, Senam-Ku equips me with the resources and inspiration to advance at my own rhythm, amplifying the enjoyment and gratification of my workout routine."</p>
+                <h3>Ahmad  Suffian - Regular User</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h1>Any Questions Or Feedback To Us?<br>Contact Us With Your Messages Right Away!</h1>
+        <a href="/contact" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <section class="footer">
+        <h4>Disclaimer</h4>
+        <p>All Copyrights of Senam-Ku System's Project Goes To UiTM For CSP600/CSP650 Subject!</p>
+        <p>Made by Syazreel Najmi with the supervision of Dr. Pradeep Isawasan</p>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="with=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../static/images/icon.png" type="image/png">
+    <title>Silat-AI Model Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            width: 150px;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #0045AA;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        p {
+            color: white;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .sub-header {
+            height: 45vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(../static/images/background.jpeg);
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+        }
+
+        .sub-header h1 {
+          margin-top: 80px;
+        }
+
+        .about-us {
+          width: 80%;
+          margin: auto;
+          padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .blue-buttons {
+            display: flex;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #video {
+            display: block;
+            margin: 30px auto;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #333;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-table {
+            border-collapse: collapse;
+            margin: 25px auto;
+            font-size: 0.9em;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            padding-top: 10px;
+        }
+
+        .content-table thead tr {
+            background-color: #3E5BF1;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .content-table th, .content-table td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .content-table tbody tr:last-of-type {
+            border-bottom: 2px solid #3E5BF1;
+        }
+
+        .content-table tbody tr.active-row {
+            font-weight: bold;
+            color: #3E5BF1;
+        }
+
+         .footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            background: #CECCFF;
+        }
+
+        .footer h4 {
+            margin-bottom: 20px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .footer p {
+            color: black;
+            font-size: 14px;
+        }
+
+        #video, .output {
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="/home"><img src="../static/images/logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="/aboutus">ABOUT US</a></li>
+                    <li><a href="/tutorial">TUTORIAL</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1>Silat-AI Model</h1>
+        <p>Test the model with real-time feedback experience instantly!</p>
+    </section>
+
+    <section class="about-us">
+        <div class="container">
+
+            <div class="blue-buttons">
+                <button class="btn tech1" onclick="startTech(1)">Start Tumbuk Lurus Pintal Tali Model</button>
+                <button class="btn tech2" onclick="startTech(2)">Start Seni Pancung Dayong Model</button>
+                <button class="btn tech3" onclick="startTech(3)">Start Asas Elakan 1 Model</button>
+                <button class="btn tech4" onclick="startTech(4)">Start Asas Elakan 2 Model</button>
+            </div>
+
+            <div id="additionalButtons" style="display: none;">
+                <button class="btn" onclick="startRealTime()">Real-time</button>
+                <button class="btn" onclick="Upload()">Upload Video</button>
+                <form action="" id="uploadForm" enctype="multipart/form-data" method="post">
+                    <label id="labelUpload" class="hidden" for="videoUpload">Upload Your Video:</label>
+                    <input id="inputUpload" class="hidden" type="file" id="videoUpload" name="video" accept="video/*" required>
+                    <br><br>
+                    <button id="btnUpload" onclick="startHandleUpload()" class="btn hidden" type="button">Submit</button>
+                </form>
+            </div>
+
+            <div id="silatContent">
+                <img id="video" src="" width="70%" alt="Video Stream">
+
+                <div class="output" id="info">
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Technique </th>
+                                <th id="technique"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="active-row">
+                                <td>Class </td>
+                                <td id="class"></td>
+                            </tr>
+                            <tr>
+                                <td>Class No </td>
+                                <td id="classNo"></td>
+                            </tr>
+                            <tr class="active-row">
+                                <td>Correct </td>
+                                <td id="correct"></td>
+                            </tr>
+                            <tr>
+                                <td>Incorrect </td>
+                                <td id="incorrect"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h4>Disclaimer</h4>
+        <p>All Copyrights of Silat-AI System's Project Goes To UiTM For CSP600/CSP650 Subject!</p>
+        <p>Made by Suffian Shahril with the supervision of Dr. Pradeep Isawasan</p>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        socket.on('update', (data) => {
+            document.getElementById('technique').innerText = data.technique;
+            document.getElementById('classNo').innerText = data.classNo;
+            document.getElementById('correct').innerText = data.correct;
+            document.getElementById('incorrect').innerText = data.incorrect;
+            document.getElementById('class').innerText = data.class;
+        });
+
+        function startTech(silatNumber) {
+            document.getElementById('labelUpload').classList.add('hidden');
+            document.getElementById('inputUpload').classList.add('hidden');
+            document.getElementById('btnUpload').classList.add('hidden');
+            document.getElementById('video').style.display = 'none';
+            document.querySelector('.output').style.display = 'none';
+
+            // Update video source to nothing
+            document.getElementById('video').src = `` ;
+
+            // Store the silatNumber in a global variable to use it later
+            window.selectedSilatNumber = silatNumber;
+
+            // Show additional buttons for real-time and upload options
+            document.getElementById('additionalButtons').style.display = 'block';
+        }
+
+        function startRealTime() {
+            document.getElementById('labelUpload').classList.add('hidden');
+            document.getElementById('inputUpload').classList.add('hidden');
+            document.getElementById('btnUpload').classList.add('hidden');
+            // Get the exerciseNumber from the global variable
+            const silatNumber = window.selectedSilatNumber;
+
+            // Update video source based on the stored silatNumber
+            document.getElementById('video').src = `/video${silatNumber}` ;
+
+            // Show video feed and output table
+            document.getElementById('video').style.display = 'block';
+            document.querySelector('.output').style.display = 'block';
+
+            // Add code to start real-time video feed (using webcam)
+            alert('Starting real-time feed');
+        }
+
+        function Upload() {
+            document.getElementById('video').src = ``;
+            document.getElementById('video').style.display = 'none';
+            document.querySelector('.output').style.display = 'none';
+            document.getElementById('labelUpload').classList.remove('hidden');
+            document.getElementById('inputUpload').classList.remove('hidden');
+            document.getElementById('btnUpload').classList.remove('hidden');
+            const form = document.getElementById('uploadForm');
+            form.action = ``;
+        }
+
+        function startHandleUpload() {
+            document.getElementById('labelUpload').classList.add('hidden');
+            document.getElementById('inputUpload').classList.add('hidden');
+            document.getElementById('btnUpload').classList.add('hidden');
+            const silatNumber = window.selectedSilatNumber;
+            const form = document.getElementById('uploadForm');
+            const formData = new FormData(form);
+
+            // Prevent default form submission behavior
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+            });
+
+            // Update form action based on selected exercise number
+            form.action = `/videoResult`;
+
+            // Send AJAX request
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    var response = JSON.parse(this.responseText);
+                    var videoPath = response.video_path;
+
+                    // Update the src attribute of the video element
+                    var filename = videoPath.split('\\').pop();  // Extracting only the filename from the path
+                    document.getElementById('video').src = `/displayVideo${silatNumber}/${filename}`;
+                }
+            };
+            xhr.open("POST", form.action, true);
+            xhr.send(formData);
+
+            // Hide/show relevant elements
+            document.getElementById('video').style.display = 'block';
+            document.querySelector('.output').style.display = 'block';
+            alert('Uploading video');
+        }
+    </script>
+
+
+</body>
+</html>

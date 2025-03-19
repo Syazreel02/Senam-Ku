@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Company Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        form {
+            border: 2px solid blue;
+            padding: 40px;
+            width: 300px;
+            text-align: center;
+        }
+
+        form label {
+            display: block;
+            text-align: left;
+            margin-left: 40px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 8px;
+            margin-bottom: 40px;
+        }
+
+        input[type="text"]::placeholder {
+            color: blue;
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            width: 80%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="company-name" style="color: red;">Company name:</label><br>
+        <input type="text" id="company-name" name="company-name" placeholder="Enter name"><br>
+
+        <label for="company-address" style="color: red;">Company address:</label><br>
+        <input type="text" id="company-address" name="company-address" placeholder="Enter address"><br>
+
+        <label for="company-contact" style="color: red;">Company contact number:</label><br>
+        <input type="text" id="company-contact" name="company-contact" placeholder="Enter contact number"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

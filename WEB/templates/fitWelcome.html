@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap">
+    <link rel="icon" type="image/x-icon" href="../static/img/Senam-Ku_icon.png">
+    <style>
+        :root{
+          --overlay-color: #363B41;
+        }
+
+        *{
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .showcase{
+          position: absolute;
+          right: 0;
+          width: 100%;
+          min-height: 100vh;
+          padding: 100px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: #111;
+          color: #fff;
+          z-index: 2;
+          transition : 0.5s;
+        }
+
+        .showcase.active{
+          right: 300px;
+        }
+
+        .showcase header{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 40px 100px;
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .logo{
+          text-transform: uppercase;
+          cursor: pointer;
+          font-size: 60px;
+        }
+
+        .toggle {
+          position: relative;
+          width: 60px;
+          height: 60px;
+          background: url('menu.png');
+          background-repeat: no-repeat;
+          background-size: 30px;
+          background-position: center;
+          cursor: pointer;
+        }
+
+        .toggle.active {
+          background: url('close.png');
+          background-repeat: no-repeat;
+          background-size: 25px;
+          background-position: center;
+        }
+
+        .showcase video{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.8;
+        }
+
+        .overlay{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: var(--overlay-color);
+          mix-blend-mode: overlay;
+        }
+
+        .text{
+          position: relative;
+          z-index: 10;
+        }
+
+        .text h2{
+          font-size: 6em;
+          font-weight: 800;
+          line-height: 1em;
+          text-transform: uppercase;
+        }
+
+        .text h3{
+          font-size: 4em;
+          font-weight: 700;
+          line-height: 1em;
+          text-transform: uppercase;
+          max-width: 65%;
+        }
+
+        .text p{
+          font-size: 1.5em;
+          margin: 20px 0;
+          font-weight: 400;
+          max-width: 850px;
+        }
+
+        .text a{
+          display: inline-block;
+          font-size: 1.25em;
+          background: #fff;
+          padding: 10px 30px;
+          text-decoration: none;
+          color: #111;
+          margin-top: 10px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          transition: 0.2s;
+          margin-left: auto;
+        }
+
+        .text a:hover{
+          letter-spacing: 6px;
+        }
+
+        .social {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0;
+        }
+
+        .social li{
+          list-style: none;
+        }
+
+        .social li a{
+          display: inline-block;
+          filter: invert(1);
+          margin-right: 50px;
+          transform: scale(0.5);
+          transition: 0.5s;
+        }
+
+        .social li a:hover{
+          transform: scale(0.5) translateY(-15px);
+        }
+
+        .menu{
+          position: absolute;
+          top: 0;
+          right: 0;
+          width : 300px;
+          height : 100%;
+          display: flex;
+          align-items : center;
+          justify-content : center;
+        }
+
+        .menu ul{
+          position: relative;
+          list-style: none;
+        }
+
+        .menu ul li a{
+          text-decoration: none;
+          font-size: 24px;
+          color: #111;
+        }
+
+        .menu ul li a:hover{
+          color: var(--overlay-color);
+        }
+
+    </style>
+    <title>Senam-Ku Page</title>
+</head>
+
+<body>
+    <section class="showcase">
+        <header>
+            <h2 class="logo">Senam-Ku</h2>
+            <div class="toggle"></div>
+        </header>
+
+        <video src="{{ url_for('static', filename='fittech.mp4') }}" muted loop autoplay></video>
+
+        <div class="overlay"></div>
+
+        <div class="text">
+            <h2 class="logo"></h2>
+            <h3>Your Gateway to a Healthier Lifestyle</h3>
+            <p>
+                 Dive into our welcoming portal and embark on a journey where cutting-edge artificial intelligence transforms your health and wellness aspirations.
+                Explore innovative solutions, personalized guidance, and revolutionary tools designed to elevate your fitness journey like never before.
+            </p>
+            <a href="/explore">Explore</a>
+        </div>
+
+        <ul class="social">
+            <li><a href=""><img src="../static/facebook.png" alt=""></a></li>
+            <li><a href=""><img src="../static/twitter.png" alt=""></a></li>
+            <li><a href=""><img src="../static/instagram.png" alt=""></a></li>
+        </ul>
+    </section>
+
+<!--    <div class="menu">-->
+<!--        <ul>-->
+<!--            <li><a href="#">Home</a></li>-->
+<!--            <li><a href="#">Attack 1</a></li>-->
+<!--            <li><a href="#">About Us</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+    <script>
+        const menuToggle = document.querySelector('.toggle');
+        const showcase = document.querySelector('.showcase');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            showcase.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>

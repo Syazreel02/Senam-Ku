@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="../static/img/Senam-Ku_icon.png">
+    <title>Senam-Ku Tutorial Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            width: 150px;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: #473502;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #0045AA;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #473502;
+        }
+
+        p {
+            color: white;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+
+        .row {
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .sub-header {
+            height: 40vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(255,251,171,0.7), rgba(134,190,11,0.7)), url(img/background.jpeg);
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+        }
+
+        .container1 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .main-video {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-video .video {
+            width: 80%;
+        }
+
+        .main-video video {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .main-video .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 70px;
+            padding-right: 60px;
+        }
+
+        .video-list .vid {
+            display: flex;
+            gap: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .video-list .vid.active {
+            background: #FF9E22;
+            color: #fff;
+        }
+
+        .video-list .thumbnail img {
+            width: 110px;
+            height: 70px;
+            border-radius: 5px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        .video-list .info {
+            display: flex;
+            align-items: center;
+        }
+
+        .video-list .info .title1 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            background: #F9DDA6;
+        }
+
+        .footer h4 {
+            margin-bottom: 20px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .footer p {
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="/home"><img src="../static/img/Senam-Ku_logo.png" alt="Logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="/aboutus">ABOUT US</a></li>
+                    <li><a href="/tutorial">TUTORIAL</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1>Senam-Ku Tutorial Page</h1>
+        <p>Here, you can access demonstrations on how to perform exercise movement with precision and accuracy.<br>Watch our videos
+            to learn the correct way to execute each move, empowering you to understand the basic of exercising like never before!</p>
+    </section>
+
+    <section class="container1">
+        <div class="main-video">
+            <div class="video">
+                <video src="../static/img/tech1.mp4" controls autoplay></video>
+                <h3 class="title">1. Squat</h3>
+            </div>
+        </div>
+
+        <div class="video-list">
+            <div class="vid active" data-video="../static/img/tech1.mp4">
+                <div class="thumbnail">
+                    <img src="../static/img/t2.png" alt="Squat Thumbnail">
+                </div>
+                <h3 class="title1">1. Squat</h3>
+            </div>
+
+            <div class="vid" data-video="../static/img/tech2.mp4">
+                <div class="thumbnail">
+                    <img src="../static/img/t3.png" alt="Bicep Curl Thumbnail">
+                </div>
+                <h3 class="title1">2. Bicep Curl</h3>
+            </div>
+
+            <div class="vid" data-video="../static/img/tech3.mp4">
+                <div class="thumbnail">
+                    <img src="../static/img/t4.jpeg" alt="Sit Up Thumbnail">
+                </div>
+                <h3 class="title1">3. Sit Up</h3>
+            </div>
+
+            <div class="vid" data-video="../static/img/tech4.mp4">
+                <div class="thumbnail">
+                    <img src="../static/img/t1.jpeg" alt="Push Up Thumbnail">
+                </div>
+                <h3 class="title1">4. Push Up</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h4>Disclaimer</h4>
+        <p>All Copyrights of Senam-Ku System's Project Goes To UiTM For CSP600/CSP650 Subject!</p>
+        <p>Made by Syazreel Najmi with the supervision of Dr. Pradeep Isawasan</p>
+    </section>
+
+    <script>
+        let listVideo = document.querySelectorAll('.video-list .vid');
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .title');
+
+        listVideo.forEach(video =>{
+            video.onclick = () =>{
+                listVideo.forEach(vid => vid.classList.remove('active'));
+                video.classList.add('active');
+                if(video.classList.contains('active')){
+                    let src = video.getAttribute('data-video');
+                    mainVideo.src = src;
+                    mainVideo.autoplay = true;
+                    let text = video.children[1].innerHTML;
+                    title.innerHTML = text;
+                };
+            };
+        });
+    </script>
+
+</body>
+</html>

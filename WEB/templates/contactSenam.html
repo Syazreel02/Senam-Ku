@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="with=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="../static/img/Senam-Ku_icon.png">
+    <title>Senam-Ku Contact Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            width: 150px;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: #473502;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #0045AA;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+            border: 1px solid #E58100;
+            background: #E58100;
+            transition: 1s;
+        }
+
+        .orange-btn {
+          border: 1px solid #E58100;
+          background: transparent;
+          color: #E58100;
+        }
+
+        .orange-btn:hover {
+          color: #fff;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #473502;
+        }
+
+        p {
+            color: white;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .sub-header {
+            height: 40vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(255,251,171,0.7), rgba(134,190,11,0.7)), url(img/background.jpeg);
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+        }
+
+        .location {
+            width: 80%;
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        .location iframe {
+            width: 100%;
+        }
+
+        .contact-us {
+            width: 80%;
+            margin: auto;
+        }
+
+        .row {
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact-col {
+            flex-basis: 48%;
+            margin-bottom: 30px;
+        }
+
+        .contact-col div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-col p {
+            color: black;
+        }
+
+        .contact-col div p {
+            padding: 0;
+        }
+
+        .contact-col div h5 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 400;
+        }
+
+        .contact-col input, .contact-col textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 17px;
+            outline: none;
+            border: 1px solid #ccc;
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            background: #F9DDA6;
+        }
+
+        .footer h4 {
+            margin-bottom: 20px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .footer p {
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="/home"><img src="../static/img/Senam-Ku_logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    <li><a href="/aboutus">ABOUT US</a></li>
+                    <li><a href="/tutorial">TUTORIAL</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1>Contact Us</h1>
+        <p>Tell us your experience on using the Senam-Ku system!</p>
+    </section>
+
+    <section class="location">
+        <iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.2105883165145!2d101.21644217573898!3d4.178963795794847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cb05ba96cbf20d%3A0xdd30c30c83bac918!2sUiTM%20Cawangan%20Perak%2C%20Kampus%20Tapah!5e0!3m2!1sen!2smy!4v1716895423040!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <span>
+                    <h5>Plaza Pentadbiran, UiTM Perak Branch, Tapah Campus</h5>
+                    <p>Tapah, Perak, Malaysia</p>
+                    </span>
+                </div>
+
+                <div>
+                    <span>
+                        <h5>+011-2086-3651</h5>
+                        <p>Monday to Friday, 10AM to 4PM</p>
+                    </span>
+                </div>
+
+                <div>
+                    <span>
+                    <h5>syazreelnajmi02@gmail.com</h5>
+                    <p>Email me your query</p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="contact-col">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="hero-btn orange-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h4>Disclaimer</h4>
+        <p>All Copyrights of Senam-Ku System's Project Goes To UiTM For CSP600/CSP650 Subject!</p>
+        <p>Made by Syazreel Najmi with the supervision of Dr. Pradeep Isawasan</p>
+    </section>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyB1UVJfY1IYtQWhtq0yoLGtCcLDQVt7BEgApl3Cft88WJr7H5yf4nQVIg0qZF2i39pkg/exec'
+      const form = document.forms['submit-to-google-sheet']
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
+</body>
+</html>
